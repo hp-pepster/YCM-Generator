@@ -16,7 +16,7 @@ import glob
 
 
 # Default flags for make
-default_make_flags = ["-i", "-j" + str(multiprocessing.cpu_count())]
+default_make_flags = ["-i", "-j" + str(multiprocessing.cpu_count()), "all"]
 
 # Default flags for ninja
 default_ninja_flags = ["-j" + str(multiprocessing.cpu_count())]
