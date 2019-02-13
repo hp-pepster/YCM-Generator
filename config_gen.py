@@ -205,7 +205,7 @@ def fake_build(project_dir, c_build_log_path, cxx_build_log_path, verbose, make_
     make_args = [make_cmd] + make_flags
 
     ninja_args = [ninja_cmd] + ninja_flags
-    
+
     # Used for the qmake build system below
     pro_files = glob.glob(os.path.join(project_dir, "*.pro"))
 
@@ -323,13 +323,13 @@ def fake_build(project_dir, c_build_log_path, cxx_build_log_path, verbose, make_
         print("\nCleaning up...")
         print("")
         shutil.rmtree(build_dir)
-    
+
     elif build_system == "meson":
         # meson build system
         build_dir = tempfile.mkdtemp()
         proc_opts["cwd"] = build_dir
         print("Configuring meson in '{}'...".format(build_dir))
-        
+
         print("\nRunning meson...",project_dir)
         run(["meson", project_dir], env=env_config, **proc_opts)
 
@@ -561,4 +561,3 @@ def unbalanced_quotes(s):
 if(__name__ == "__main__"):
     # Note that sys.exit() lets us use None and 0 interchangably
     sys.exit(main())
-
